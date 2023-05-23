@@ -1,0 +1,40 @@
+cc:
+  machine-id: 1
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+server:
+  port: 8888
+  servlet:
+    context-path: /
+logging:
+  level:
+    root: INFO
+    com.openccos: DEBUG
+spring:
+  #  设置服务名
+  application:
+    name: cc_core
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    static-path-pattern: /static/**
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/iot_user?characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 1681860
+  servlet:
+    multipart:
+      max-file-size: 104857600000
+      max-request-size: 10485760000000
+  profiles:
+    include: role
+  cache:
+    type: caffeine
+    cache-names:
+      - core
+    caffeine:
+      spec: maximumSize=1024,expireAfterWrite=2h

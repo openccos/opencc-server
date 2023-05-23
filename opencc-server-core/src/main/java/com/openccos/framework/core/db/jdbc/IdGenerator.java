@@ -1,40 +1,6 @@
 package com.openccos.framework.core.db.jdbc;
-
 /**
- * 主键生成器。
- */
-//public class IdGenerator {
-//	private AtomicLong key;
-//
-//	public IdGenerator() {
-//		this(0);
-//	}
-//
-//	/**
-//	 *
-//	 * @param seed 集群服务id，用于集群产生的数据不重复（0~255)
-//	 */
-//	public IdGenerator(int seed) {
-//		long now = System.currentTimeMillis();
-//
-//		if(seed > 0xFF){
-//			seed = 0xFF;
-//		}
-//
-//		if(seed <= 0){
-//			seed = 1;
-//		}
-//
-//		key = new AtomicLong(now | (((long) seed) << 48));
-//	}
-//
-//	public long nextCode() {
-//		return key.incrementAndGet();
-//	}
-//}
-
-/**
- * tweeter的snowflake
+ * 主键生成器 tweeter的snowflake 算法
  *    time—42bits,精确到ms，那就意味着其可以表示长达(2^42-1)/(1000360024*365)=139.5年
  *   (a) id构成: 42位的时间前缀 + 10位的节点标识 + 12位的sequence避免并发的数字(12位不够用时强制得到新的时间前缀)
  *       注意这里进行了小改动: snowkflake是5位的datacenter加5位的机器id; 这里变成使用10位的机器id

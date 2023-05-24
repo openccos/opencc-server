@@ -1,6 +1,6 @@
 package com.openccos.framework.core.db.jdbc;
 
-import com.openccos.framework.core.SwMap;
+import com.openccos.framework.core.CcMap;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -11,13 +11,13 @@ import java.sql.SQLException;
  * ORM映射处理器，实现spring jdbcTemplate的行集映射器，对下划线进行小驼峰命名转化
  * @author xkliu
  */
-public class SwMapPropertyRowMapper<T> implements RowMapper<T> {
-  public SwMapPropertyRowMapper(Class<T> mappedClass) {
+public class CcMapPropertyRowMapper<T> implements RowMapper<T> {
+  public CcMapPropertyRowMapper(Class<T> mappedClass) {
   }
 
   @Override
   public T mapRow(ResultSet resultSet, int i) throws SQLException {
-    SwMap map = new SwMap();
+    CcMap map = new CcMap();
 
     ResultSetMetaData rsmd = resultSet.getMetaData();
     int columnCount = rsmd.getColumnCount();

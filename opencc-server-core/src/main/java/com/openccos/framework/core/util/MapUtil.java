@@ -1,6 +1,6 @@
 package com.openccos.framework.core.util;
 
-import com.openccos.framework.core.SwMap;
+import com.openccos.framework.core.CcMap;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -190,8 +190,8 @@ public class MapUtil {
     return defaultValue;
   }
 
-  public static Set<Long> readLongSet(SwMap swMap, String name) {
-    Object value = swMap.get(name);
+  public static Set<Long> readLongSet(CcMap ccMap, String name) {
+    Object value = ccMap.get(name);
     if (value != null) {
       String[] ary = value.toString().split(",");
       if (ary.length > 0) {

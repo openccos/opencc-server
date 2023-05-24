@@ -1,5 +1,5 @@
 package com.openccos.framework.core.util;
 
-public interface SwConsumer {
+public interface CcConsumer {
   void accept();
 }

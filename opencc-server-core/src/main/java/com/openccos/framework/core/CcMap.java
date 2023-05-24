@@ -9,10 +9,10 @@ import java.util.Set;
  * 通用map对象，用于无具体类型的传值
  * @author kevin
  */
-public class SwMap extends HashMap<String, Object> {
-  public SwMap() {}
+public class CcMap extends HashMap<String, Object> {
+  public CcMap() {}
 
-  public SwMap(int initialCapacity) {
+  public CcMap(int initialCapacity) {
     super(initialCapacity);
   }
 
@@ -77,7 +77,7 @@ public class SwMap extends HashMap<String, Object> {
   }
 
   @Override
-  public SwMap put(String name, Object value) {
+  public CcMap put(String name, Object value) {
     if (value != null) {
       super.put(name, value);
     } else {
@@ -87,7 +87,7 @@ public class SwMap extends HashMap<String, Object> {
     return this;
   }
 
-  public static SwMap of(String name, Object value) {
-    return new SwMap().put(name, value);
+  public static CcMap of(String name, Object value) {
+    return new CcMap().put(name, value);
   }
 }

@@ -7,7 +7,7 @@ import java.util.Date;
  * @author kevin
  * @since 1.0.0
  */
-public class R extends SwMap {
+public class R extends CcMap {
     public static final String KEY_MSG = "msg";
     public static final String KEY_CODE = "code";
     public static final String KEY_DATA = "data";

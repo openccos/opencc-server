@@ -1,3 +1,3 @@
-# im-framework
+# opencc-server
 
-基本框架
+开源软交换P系统服务

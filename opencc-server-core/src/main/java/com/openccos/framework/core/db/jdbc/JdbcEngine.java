@@ -1,10 +1,10 @@
 package com.openccos.framework.core.db.jdbc;
 
-import com.openccos.framework.core.SwMap;
+import com.openccos.framework.core.CcMap;
 import com.openccos.framework.core.spring.RuleProperties;
 import com.openccos.framework.core.exception.DbException;
 import com.openccos.framework.core.util.JsonUtil;
-import com.openccos.framework.core.util.SwConsumer;
+import com.openccos.framework.core.util.CcConsumer;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
@@ -372,7 +372,7 @@ public class JdbcEngine implements IIdGenerator {
    * @param run 执行事务SQL
    * @param success 成功回调函数
    */
-  public void doTrans(Consumer<JdbcTrans> run, SwConsumer success) {
+  public void doTrans(Consumer<JdbcTrans> run, CcConsumer success) {
     doTrans(run, success, null);
   }
 
@@ -382,7 +382,7 @@ public class JdbcEngine implements IIdGenerator {
    * @param success 成功回调函数
    * @param failed 失败回调函数
    */
-  public void doTrans(Consumer<JdbcTrans> run, SwConsumer success, SwConsumer failed) {
+  public void doTrans(Consumer<JdbcTrans> run, CcConsumer success, CcConsumer failed) {
     boolean commit = false;
     boolean clean = false;
     try(JdbcTrans trans = openTrans()) {
@@ -468,8 +468,8 @@ public class JdbcEngine implements IIdGenerator {
   private <T> RowMapper<T> createRowMapper(Class<T> type) {
     RowMapper<T> rowMapper;
     if (java.util.Map.class.isAssignableFrom(type)) {
-      if (SwMap.class.equals(type)) {
-        rowMapper = new SwMapPropertyRowMapper<>(type);
+      if (CcMap.class.equals(type)) {
+        rowMapper = new CcMapPropertyRowMapper<>(type);
       } else {
         rowMapper = new MapPropertyRowMapper<>(type);
       }

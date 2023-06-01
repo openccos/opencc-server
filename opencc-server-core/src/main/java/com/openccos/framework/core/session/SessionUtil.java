@@ -5,7 +5,8 @@ import com.openccos.framework.core.redis.RedisManager;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
+
 
 /**
  * 〈session工具类〉

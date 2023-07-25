@@ -60,7 +60,7 @@ public class PermInterceptor implements HandlerInterceptor {
         }
 
         // 如果不包含权限编码,则表示这个接口登录就可以访问
-        if (CcPerm.NONE.equals(authorityCode)) {
+        if (!CcPerm.NONE.equals(authorityCode)) {
             String token = SessionUtil.readToken(request);
             if (StringUtils.isBlank(token)) {
                 throw new UnauthenticatedException("not find Auth-Token in header");

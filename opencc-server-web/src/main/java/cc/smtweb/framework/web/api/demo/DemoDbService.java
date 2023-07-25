@@ -2,6 +2,7 @@ package cc.smtweb.framework.web.api.demo;
 
 import cc.smtweb.framework.web.entity.UserPO;
 import com.openccos.framework.core.R;
+import com.openccos.framework.core.annotation.CcPerm;
 import com.openccos.framework.core.db.DbEngine;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/demo")
+@CcPerm(CcPerm.NONE)
 public class DemoDbService {
   @Autowired
   DbEngine dbEngine;
